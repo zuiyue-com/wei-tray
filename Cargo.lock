@@ -1039,7 +1039,7 @@ checksum = "9d1742c092047eebc69fe72da18126285310597e805f2fd09c0e2195f633659c"
 
 [[package]]
 name = "wei-tray"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "systray",
  "webbrowser",
