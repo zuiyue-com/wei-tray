@@ -2,8 +2,8 @@ use systray::Application;
 
 fn main() {
     let mut app = Application::new().unwrap();
-    let home_dir = wei_env::home_dir().unwrap();
-    let ico_path = std::path::Path::new(&home_dir).join("wei.ico");
+    // let home_dir = wei_env::home_dir().unwrap();
+    let ico_path = std::path::Path::new("./wei.ico");
 
     app.set_icon_from_file(&ico_path.to_string_lossy()).unwrap();
     app.add_menu_item(&"打开主界面".to_string(), |_| {
@@ -11,6 +11,7 @@ fn main() {
         Ok::<_, systray::Error>(())
     }).unwrap();
     app.add_menu_item(&"退出".to_string(), |window| {
+        wei_env::stop();
         window.quit();
         Ok::<_, systray::Error>(())
     }).unwrap();

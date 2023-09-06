@@ -1,6 +1,6 @@
 [package]
 name = "wei-tray"
-version = "0.2.0"
+version = "0.2.2"
 edition = "2021"
 description = "wei tray"
 documentation = "https://github.com/zuiyue-com/wei-tray"
@@ -10,4 +10,4 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 systray = "0.4.0"
 webbrowser = "0.8.10"
-wei-env = "0.1.0"
+wei-env = "0.2.10"
