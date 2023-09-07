@@ -1,6 +1,6 @@
 use systray::Application;
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let instance = single_instance::SingleInstance::new("wei-tray")?;
     if !instance.is_single() { 
         std::process::exit(1);
