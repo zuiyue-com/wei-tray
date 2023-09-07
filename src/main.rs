@@ -16,4 +16,5 @@ fn main() {
         Ok::<_, systray::Error>(())
     }).unwrap();
     app.wait_for_message().unwrap();
+    wei_run::kill("wei-ui")?;
 }

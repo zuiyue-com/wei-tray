@@ -8,6 +8,7 @@ homepage = "https://github.com/zuiyue-com/wei-tray"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
+wei-env = "0.2.10"
+wei-run = "0.1.15"
 systray = "0.4.0"
 webbrowser = "0.8.10"
-wei-env = "0.2.10"
