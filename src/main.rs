@@ -1,6 +1,11 @@
 use systray::Application;
 
 fn main() {
+    let instance = single_instance::SingleInstance::new("wei-tray")?;
+    if !instance.is_single() { 
+        std::process::exit(1);
+    };
+
     let mut app = Application::new().unwrap();
     // let home_dir = wei_env::home_dir().unwrap();
     let ico_path = std::path::Path::new("../wei/res/wei.ico");
