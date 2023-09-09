@@ -9,7 +9,7 @@ license = "MIT OR Apache-2.0"
 
 [dependencies]
 wei-env = "0.2.10"
-wei-run = "0.1.18"
+wei-run = "0.1.21"
 systray = "0.4.0"
 webbrowser = "0.8.10"
 single-instance = "0.3"
