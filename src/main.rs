@@ -20,6 +20,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     app.set_icon_from_file(&ico_path.to_string_lossy()).unwrap();
     app.add_menu_item(&"启动主界面".to_string(), |_| {
+        wei_run::kill("wei-ui").unwrap();
         wei_run::run_async("wei-ui", vec![]).unwrap();
         Ok::<_, systray::Error>(())
     }).unwrap();
@@ -34,3 +35,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     Ok(())
 }
+
