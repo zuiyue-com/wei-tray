@@ -1,18 +1,26 @@
 use systray::Application;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    wei_env::bin_init("wei-tray");
     let instance = single_instance::SingleInstance::new("wei-tray")?;
     if !instance.is_single() { 
         std::process::exit(1);
     };
 
     let mut app = Application::new().unwrap();
-    // let home_dir = wei_env::home_dir().unwrap();
-    let ico_path = std::path::Path::new("./wei.ico");
+
+    let mut ico = "./wei.ico";
+    let mut path = std::env::current_dir()?;
+    path.push("./src/main.rs");
+    if path.exists() {
+        ico = "../wei/res/wei.ico";
+    }
+
+    let ico_path = std::path::Path::new(ico);
 
     app.set_icon_from_file(&ico_path.to_string_lossy()).unwrap();
-    app.add_menu_item(&"打开主界面".to_string(), |_| {
-        let _ = webbrowser::open("https://www.zuiyue.com");
+    app.add_menu_item(&"启动主界面".to_string(), |_| {
+        wei_run::run_async("wei-ui", vec![]).unwrap();
         Ok::<_, systray::Error>(())
     }).unwrap();
     app.add_menu_item(&"退出".to_string(), |window| {
