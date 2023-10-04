@@ -9,6 +9,6 @@ license = "MIT OR Apache-2.0"
 
 [dependencies]
 wei-env = "0.2.10"
-wei-run = "0.2.1"
+wei-run = "0.2.2"
 systray = "0.4.0"
 single-instance = "0.3"
