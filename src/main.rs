@@ -1,4 +1,5 @@
 use systray::Application;
+use std::os::windows::process::CommandExt;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     wei_env::bin_init("wei-tray");
@@ -30,6 +31,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Ok::<_, systray::Error>(())
     }).unwrap();
     app.wait_for_message().unwrap();
+
+    std::process::Command::new("powershell")
+    .arg("-ExecutionPolicy").arg("Bypass")
+    .arg("-File").arg("wei-daemon-close.ps1")
+    .creation_flags(winapi::um::winbase::CREATE_NO_WINDOW).output()?;
+
     wei_run::kill("wei")?;
     wei_run::kill("wei-ui")?;
     
