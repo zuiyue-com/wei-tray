@@ -1,6 +1,6 @@
 use systray::Application;
 
-fn start() -> Result<(), Box<dyn std::error::Error>> {
+pub fn start() -> Result<(), Box<dyn std::error::Error>> {
     wei_env::bin_init("wei-tray");
     let instance = single_instance::SingleInstance::new("wei-tray")?;
     if !instance.is_single() { 
