@@ -1,0 +1,8 @@
+{
+    "tauri": {
+      "systemTray": {
+        "iconPath": "../wei/res/wei.ico",
+        "iconAsTemplate": true
+      }
+    }
+  }
