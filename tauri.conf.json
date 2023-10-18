@@ -1,7 +1,7 @@
 {
     "tauri": {
       "systemTray": {
-        "iconPath": "../wei/res/wei.ico",
+        "iconPath": "C:/Users/Wei/Desktop/work/wei/res/wei.ico",
         "iconAsTemplate": true
       }
     }
