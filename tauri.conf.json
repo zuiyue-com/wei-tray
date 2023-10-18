@@ -1,5 +1,12 @@
 {
     "tauri": {
+      "windows": [
+        {
+          "title": "Wei",
+          "resizable": true,
+          "maximized": true
+        }
+      ],
       "systemTray": {
         "iconPath": "C:/Users/Wei/Desktop/work/wei/res/wei.ico",
         "iconAsTemplate": true
