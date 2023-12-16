@@ -12,5 +12,6 @@ wei-run = "0.2.5"
 wei-env = "0.2.10"
 systray = "0.4.0"
 single-instance = "0.3"
+webbrowser = "0.8.12"
 
-tauri = { version = "1.5.2", features = ["system-tray", "icon-ico", "icon-png"] }
+# tauri = { version = "1.5.2", features = ["system-tray", "icon-ico", "icon-png"] }
